@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 09:24:13 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/25 17:20:29 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/26 09:24:53 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,21 +68,21 @@ std::ostream& operator<<(std::ostream& out, const Fixed& f) {
 
 
 void	Fixed::setRawBits( int const raw){
-	std::cout << Color::BLUE << "setRawBits member function called" << Color::RESET << std::endl;
+	// std::cout << Color::BLUE << "setRawBits member function called" << Color::RESET << std::endl;
 	this->number = raw;
 }
 
 int Fixed::getRawBits( void )const{
-	std::cout << Color::BLUE << "getRawBits member function called" << Color::RESET << std::endl;
+	// std::cout << Color::BLUE << "getRawBits member function called" << Color::RESET << std::endl;
 	return(this->number);
 }
 
 float Fixed::toFloat(void) const{
-	std::cout << Color::BLUE << "toFloat member function called" << Color::RESET << std::endl;
+	// std::cout << Color::BLUE << "toFloat member function called" << Color::RESET << std::endl;
 	return ( static_cast<float>(getRawBits()) / (1 << bits) );
 }
 
 int Fixed::toInt(void) const{
-	std::cout << Color::BLUE << "toInt member function called" << Color::RESET << std::endl;
+	// std::cout << Color::BLUE << "toInt member function called" << Color::RESET << std::endl;
 	return (getRawBits() >> 8);
 }

@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 09:27:00 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/25 17:28:49 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:59:41 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,24 @@ public:
 	// ************************************************
 
 	Fixed& operator=(const Fixed& other);
-    std::ostream& operator<<(std::ostream& out, const Fixed& f);
+
+	Fixed& operator++();
+	Fixed operator++(int);
+	Fixed& operator--();
+	Fixed operator--(int);
+	Fixed operator+( const Fixed& other );
+	Fixed operator-( const Fixed& other );
+	Fixed operator*( const Fixed& other );
+	Fixed operator/( const Fixed& other );
+
+	bool operator>(const Fixed &other) const;
+	bool operator>=(const Fixed &other) const;
+	bool operator<(const Fixed &other) const;
+	bool operator<=(const Fixed &other) const;
+	bool operator==(const Fixed &other) const;
+	bool operator!=(const Fixed &other) const;
+    
+	friend std::ostream& operator<<(std::ostream& out, const Fixed& f);
  
 	// ************************************************
     // *                Member Functions              *
@@ -47,10 +64,15 @@ public:
 	int toInt(void) const;
 	int	getRawBits( void ) const;
 	void setRawBits(int const raw);
+	static Fixed &min(Fixed &a, Fixed &b);
+	static const Fixed &min(const Fixed &a, const Fixed &b);
+	static Fixed &max(Fixed &a, Fixed &b);
+	static const Fixed &max(const Fixed &a, const Fixed &b);
 
 private:
-	int number;
-	static const int bits;
+	int _number;
+	static const int _bits;
+	static const int _int_bits;
 };
 
 #endif
