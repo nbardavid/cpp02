@@ -2,9 +2,9 @@ CXX=g++
 CXXFLAGS=-std=c++98 -Wall -Wextra -Werror
 SRCDIR=src
 OBJDIR=obj
-SRCS=$(SRCDIR)/main.cpp $(SRCDIR)/Fixed.class.cpp
+SRCS=$(SRCDIR)/main.cpp $(SRCDIR)/Fixed.class.cpp $(SRCDIR)/Point.class.cpp
 OBJS=$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
-TARGET=Fixed
+TARGET=points
 
 GREEN = \033[38;2;4;231;98m
 BLUE = \033[38;2;119;166;182m

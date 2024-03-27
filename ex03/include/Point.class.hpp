@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:34:43 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/26 15:06:21 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:02:30 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,39 +26,16 @@ public:
 	Point(const float& nb1, const float& nb2);
 	Point(const Point& other);
 
-	Point &operator=(Point &&);
+	Point &operator=(Point &);
 	Point &operator=(const Point &);
 	~Point();
 
-	const Fixed getX();
-	const Fixed getY();
+	const Fixed getX() const;
+	const Fixed getY() const;
 
 private:
 	const Fixed _x;
 	const Fixed _y;
 };
-
-	// ************************************************
-	// *                 Constructors                 *
-	// ************************************************
-Point::Point(): _x(0), _y(0){
-}
-
-Point::Point(const float& nb1, const float& nb2): _x(nb1), _y(nb2){
-}
-
-Point::Point(const Point& other): _x(other._x), _y(other._y){
-}
-
-Point::~Point() {
-}
-
-const Fixed Point::getX(){
-	return (this->_x);
-}
-
-const Fixed Point::getY(){
-	return (this->_y);
-}
 
 #endif

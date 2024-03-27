@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 09:24:13 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/26 14:31:16 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:03:35 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,31 +25,31 @@ const int Fixed::_int_bits = 24;
 	// ************************************************
 
 Fixed::Fixed(const Fixed& other) : _number(other.getRawBits()) {
-	std::cout << Color::GREEN << "Copy constructeur called" << Color::RESET << std::endl;
+	// std::cout << Color::GREEN << "Copy constructeur called" << Color::RESET << std::endl;
 }
 
 Fixed::Fixed(int const num){
 	if (num > (1 << (Fixed::_int_bits - 1)) - 1 || num < -(1 << (Fixed::_int_bits - 1))){
-		std::cerr << Color::RED << "Overflow, value is set to 0" << Color::RESET << std::endl;
+		// std::cerr << Color::RED << "Overflow, value is set to 0" << Color::RESET << std::endl;
 		this->setRawBits(0);
 		return;
 	}
-	std::cout << Color::GREEN << "Int constructeur called" << Color::RESET << std::endl;
+	// std::cout << Color::GREEN << "Int constructeur called" << Color::RESET << std::endl;
 	this->setRawBits(num << _bits);
 }
 
 Fixed::Fixed(float const num){
 	if (num > (1 << (Fixed::_int_bits - 1)) - 1 || num < -(1 << (Fixed::_int_bits - 1))){
-		std::cerr << Color::RED << "Overflow, value is set to 0" << Color::RESET << std::endl;
+		// std::cerr << Color::RED << "Overflow, value is set to 0" << Color::RESET << std::endl;
 		this->setRawBits(0);
 		return;
 	}
-	std::cout << Color::GREEN << "Float constructeur called" << Color::RESET << std::endl;
+	// std::cout << Color::GREEN << "Float constructeur called" << Color::RESET << std::endl;
 	this->setRawBits(roundf(num * (1 << _bits)));
 }
 
 Fixed::Fixed():_number(0) {
-	std::cout << Color::GREEN << "Default constructeur called" << Color::RESET << std::endl;
+	// std::cout << Color::GREEN << "Default constructeur called" << Color::RESET << std::endl;
 }
 
 	// ************************************************
@@ -57,7 +57,7 @@ Fixed::Fixed():_number(0) {
 	// ************************************************
 
 Fixed::~Fixed() {
-	std::cout << Color::RED << "Destructor called" << Color::RESET << std::endl;
+	// std::cout << Color::RED << "Destructor called" << Color::RESET << std::endl;
 }    
 
 	// ************************************************
