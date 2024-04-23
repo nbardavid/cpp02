@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 09:24:15 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/26 13:56:22 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:36:35 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 #include "../include/Fixed.class.hpp"
 
 int main( void ) {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
     std::cout << std::endl << "Tests for limits with int constructor" << std::endl;
     std::cout << Fixed(-8388609) << std::endl;
     std::cout << Fixed(-8388608) << std::endl;

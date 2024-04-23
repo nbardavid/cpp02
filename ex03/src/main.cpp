@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 09:24:15 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/27 11:02:00 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:38:23 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
 		b.getX().toFloat() * (point.getY().toFloat() - a.getY().toFloat()) +
 		point.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat())
 	);
-	if (area == area1 + area2 + area3)
+	if (area == area1 + area2 + area3 &&
+		area1 != 0 && area2 != 0 && area3 != 0)
 		return (true);
 	else
 	 return (false);
@@ -50,8 +51,10 @@ int main( void ) {
 	Point c(2, 8);
 	Point out(-2.2, 5.5);
 	Point in(4, 3.5);
+	Point on(2, 3);
 
 	std::cout << bsp( a,b,c, out) << std::endl;
 	std::cout << bsp( a,b,c, in) << std::endl;
+	std::cout << bsp( a,b,c, on) << std::endl;
     return 0;
 }

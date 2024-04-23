@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 09:24:13 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/26 09:24:53 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/04/05 09:42:38 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ const int Fixed::bits = 8;
 	// ************************************************
 
 Fixed::Fixed(const Fixed& other) : number(other.getRawBits()) {
-	std::cout << Color::GREEN << "Copy constructeur called" << Color::RESET << std::endl;
+	std::cout << GREEN << "Copy constructeur called" << RESET << std::endl;
 }
 
 Fixed::Fixed(int const num):number(num << bits){
-	std::cout << Color::GREEN << "Int constructeur called" << Color::RESET << std::endl;
+	std::cout << GREEN << "Int constructeur called" << RESET << std::endl;
 }
 
 Fixed::Fixed(float const num):number(roundf(num * (1 << bits))){
-	std::cout << Color::GREEN << "Float constructeur called" << Color::RESET << std::endl;
+	std::cout << GREEN << "Float constructeur called" << RESET << std::endl;
 }
 
 Fixed::Fixed():number(0) {
-	std::cout << Color::GREEN << "Default constructeur called" << Color::RESET << std::endl;
+	std::cout << GREEN << "Default constructeur called" << RESET << std::endl;
 }
 
 	// ************************************************
@@ -42,7 +42,7 @@ Fixed::Fixed():number(0) {
 	// ************************************************
 
 Fixed::~Fixed() {
-	std::cout << Color::RED << "Destructor called" << Color::RESET << std::endl;
+	std::cout << RED << "Destructor called" << RESET << std::endl;
 }    
 
 	// ************************************************
@@ -50,7 +50,7 @@ Fixed::~Fixed() {
 	// ************************************************
 
 Fixed& Fixed::operator=(const Fixed& other) {
-	std::cout << Color::GREEN << "Copy assignment operator called" << Color::RESET << std::endl;
+	std::cout << GREEN << "Copy assignment operator called" << RESET << std::endl;
 	if (this != &other) {
 		this->number = other.getRawBits();
 	}
@@ -68,21 +68,21 @@ std::ostream& operator<<(std::ostream& out, const Fixed& f) {
 
 
 void	Fixed::setRawBits( int const raw){
-	// std::cout << Color::BLUE << "setRawBits member function called" << Color::RESET << std::endl;
+	// std::cout << BLUE << "setRawBits member function called" << RESET << std::endl;
 	this->number = raw;
 }
 
 int Fixed::getRawBits( void )const{
-	// std::cout << Color::BLUE << "getRawBits member function called" << Color::RESET << std::endl;
+	// std::cout << BLUE << "getRawBits member function called" << RESET << std::endl;
 	return(this->number);
 }
 
 float Fixed::toFloat(void) const{
-	// std::cout << Color::BLUE << "toFloat member function called" << Color::RESET << std::endl;
+	// std::cout << BLUE << "toFloat member function called" << RESET << std::endl;
 	return ( static_cast<float>(getRawBits()) / (1 << bits) );
 }
 
 int Fixed::toInt(void) const{
-	// std::cout << Color::BLUE << "toInt member function called" << Color::RESET << std::endl;
+	// std::cout << BLUE << "toInt member function called" << RESET << std::endl;
 	return (getRawBits() >> 8);
 }

@@ -1,4 +1,4 @@
-CXX=g++
+CXX=c++
 CXXFLAGS=-std=c++98 -Wall -Wextra -Werror
 SRCDIR=src
 OBJDIR=obj

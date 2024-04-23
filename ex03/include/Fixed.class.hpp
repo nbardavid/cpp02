@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 09:27:00 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/27 10:45:11 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:35:38 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ public:
 	bool operator<=(const Fixed &other) const;
 	bool operator==(const Fixed &other) const;
 	bool operator!=(const Fixed &other) const;
-    
-	friend std::ostream& operator<<(std::ostream& out, const Fixed& f);
  
 	// ************************************************
     // *                Member Functions              *
@@ -74,5 +72,7 @@ private:
 	static const int _bits;
 	static const int _int_bits;
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& f);
 
 #endif
